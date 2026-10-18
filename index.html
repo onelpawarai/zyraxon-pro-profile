@@ -1,168 +1,237 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<title>ZYRAXON-Pro — প্রোফাইল ও ক্যাপাবিলিটি শীট</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-  @page { size: A4; margin: 16mm 15mm; }
-  :root{
-    --ink:#0b1020; --muted:#5b6478; --line:#e3e7f0;
-    --brand:#5b3df5; --brand2:#00c2a8; --bg:#f6f7fb;
-  }
-  *{ box-sizing:border-box; }
-  body{
-    margin:0; background:var(--bg); color:var(--ink);
-    font-family:"Hind Siliguri","Noto Sans Bengali",-apple-system,"Segoe UI",Roboto,sans-serif;
-    line-height:1.7; -webkit-print-color-adjust:exact; print-color-adjust:exact;
-  }
-  .sheet{
-    width:210mm; min-height:297mm; margin:0 auto; background:#fff;
-    padding:16mm 15mm; box-shadow:0 20px 60px rgba(11,16,32,.12);
-  }
-  header{ border-bottom:3px solid var(--ink); padding-bottom:8mm; margin-bottom:8mm; }
-  .brandline{ display:flex; justify-content:space-between; align-items:flex-start; gap:8mm; }
-  .logo{
-    width:22mm; height:22mm; border-radius:6mm; flex:0 0 auto;
-    background:linear-gradient(135deg,var(--brand),var(--brand2));
-    color:#fff; display:flex; align-items:center; justify-content:center;
-    font-size:20pt; font-weight:800; letter-spacing:-.5px;
-  }
-  h1{ font-size:26pt; margin:0 0 2mm; letter-spacing:-.6px; line-height:1.2; }
-  .sub{ color:var(--muted); font-size:10.5pt; margin:0; }
-  .meta{ text-align:right; font-size:8.6pt; color:var(--muted); line-height:1.9; white-space:nowrap; }
-  .meta b{ color:var(--ink); }
-
-  h2{
-    font-size:11.5pt; text-transform:uppercase; letter-spacing:1.6px; color:var(--brand);
-    margin:9mm 0 4mm; padding-bottom:2mm; border-bottom:1px solid var(--line);
-  }
-  p{ margin:0 0 3mm; font-size:10.2pt; }
-
-  .identity{
-    display:grid; grid-template-columns:1fr 1fr; gap:4mm; margin-bottom:2mm;
-  }
-  .idcard{
-    border:1px solid var(--line); border-left:3px solid var(--brand);
-    border-radius:2mm; padding:4mm 5mm; background:#fcfcff;
-  }
-  .idcard .k{ font-size:8pt; text-transform:uppercase; letter-spacing:1.2px; color:var(--muted); }
-  .idcard .v{ font-size:12pt; font-weight:700; margin-top:1mm; }
-
-  .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:3mm 5mm; }
-  .grid3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:3mm; }
-
-  .cap{
-    border:1px solid var(--line); border-radius:2mm; padding:3.5mm 4mm;
-    break-inside:avoid;
-  }
-  .cap h3{ margin:0 0 1mm; font-size:10pt; }
-  .cap p{ margin:0; font-size:8.9pt; color:var(--muted); }
-
-  table{ width:100%; border-collapse:collapse; font-size:9.4pt; }
-  th,td{ text-align:left; padding:2.4mm 3mm; border-bottom:1px solid var(--line); }
-  th{ background:#f2f3fa; font-size:8.4pt; text-transform:uppercase; letter-spacing:.8px; }
-  td.num{ font-variant-numeric:tabular-nums; font-weight:700; width:22mm; }
-
-  .foot{
-    margin-top:10mm; padding-top:4mm; border-top:1px solid var(--line);
-    display:flex; justify-content:space-between; font-size:8.4pt; color:var(--muted);
-  }
-  .toolbar{
-    position:sticky; top:0; z-index:9; background:#0b1020; color:#fff;
-    padding:12px 18px; display:flex; gap:12px; align-items:center; justify-content:center;
-    font-family:"Segoe UI",sans-serif;
-  }
-  .toolbar button{
-    background:linear-gradient(135deg,var(--brand),var(--brand2)); color:#fff;
-    border:0; padding:10px 20px; border-radius:8px; font-size:14px; font-weight:600; cursor:pointer;
-  }
-  .toolbar a{ color:#9ee7db; font-size:13px; text-decoration:none; }
-  @media print{ .toolbar{ display:none !important; } body{ background:#fff; } .sheet{ box-shadow:none; margin:0; } }
-</style>
+<title>Alex Deluar Husen Sayidi — Résumé</title>
+<meta name="description" content="Résumé of Alex Deluar Husen Sayidi (OMG), Founder & Lead Architect at ZYRAXON Lab and creator of the ZYRAXON-Pro agent.">
+<meta name="author" content="Alex Deluar Husen Sayidi">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<div class="toolbar">
-  <button onclick="window.print()">ডাউনলোড / প্রিন্ট PDF</button>
-  <span style="font-size:13px;opacity:.75">প্রিন্ট উইন্ডোতে Destination = “Save as PDF” নির্বাচন করুন</span>
+<div class="toolbar" role="toolbar" aria-label="Document actions">
+  <span class="toolbar-hint">A4 · 14×15mm margins · sections never split · headers/footers off</span>
+  <button class="btn" type="button" id="downloadPdf" onclick="window.print()">Download PDF</button>
 </div>
 
-<div class="sheet">
+<main class="page">
 
-  <header>
-    <div class="brandline">
-      <div style="display:flex;gap:5mm;align-items:center">
-        <div class="logo">Z</div>
-        <div>
-          <h1>ZYRAXON‑Pro</h1>
-          <p class="sub">ক্লাউড এজেন্ট · ফুল‑স্ট্যাক সফটওয়্যার আর্কিটেক্ট · বিল্ড ইঞ্জিনিয়ার</p>
-        </div>
-      </div>
-      <div class="meta">
-        <div><b>নির্মাতা</b><br>onelpawarai‑X</div>
-        <div><b>ল্যাব</b><br>ZYRAXON Lab</div>
-        <div><b>মালিক</b><br>OMG</div>
-        <div><b>ডকুমেন্ট</b><br>প্রোফাইল শীট · v1.0</div>
+  <!-- 1. HEADER -->
+  <header class="block head">
+    <div class="head-main">
+      <div class="avatar" aria-hidden="true">AH</div>
+      <div class="head-text">
+        <h1 class="name">Alex Deluar Husen Sayidi</h1>
+        <p class="alias">Known as <span class="alias-tag">OMG</span></p>
+        <p class="title-line">Founder &amp; Lead Architect — ZYRAXON Lab</p>
+        <p class="summary">
+          I build autonomous AI agents and the products around them — from the ZYRAXON-Pro agent
+          and its 871-tool library to full-stack products shipped end to end and installers for
+          every platform, built and released through cloud CI.
+        </p>
       </div>
     </div>
+    <ul class="contact" aria-label="Contact">
+      <li class="contact-item">
+        <span class="contact-ico" aria-hidden="true">GH</span>
+        <a class="contact-link" href="https://github.com/onelpawarai">github.com/onelpawarai</a>
+      </li>
+      <li class="contact-item">
+        <span class="contact-ico" aria-hidden="true">LOC</span>
+        <span>Jakarta, Indonesia</span>
+      </li>
+      <li class="contact-item">
+        <span class="contact-dot" aria-hidden="true"></span>
+        <span>Available for collaboration</span>
+      </li>
+    </ul>
   </header>
 
-  <h2>০১ · পরিচয়</h2>
-  <div class="identity">
-    <div class="idcard"><div class="k">কে তৈরি করেছে</div><div class="v">onelpawarai‑X</div></div>
-    <div class="idcard"><div class="k">মালিক</div><div class="v">OMG — Alex Deluar Husen Sayidi</div></div>
-    <div class="idcard" style="grid-column:1/-1"><div class="k">কোথায় তৈরি</div><div class="v">ZYRAXON Lab</div></div>
-  </div>
-  <p>ZYRAXON‑Pro একটি ক্লাউড‑নেটওয়ার্ক এজেন্ট। এটি সম্পূর্ণ কোড লিখে, ব্রাউজারে খুলে যাচাই করে, তারপর সত্যিকারের লাইভ লিংক অথবা ইনস্টলযোগ্য ফাইল হাতে দেয়। কোনো কিছু তৈরি হয়েছে বলে দাবি করার আগে সেটি খুলে দেখা হয়।</p>
+  <!-- 2. PROFILE -->
+  <section class="block">
+    <h2 class="sec-label">Profile</h2>
+    <p class="prose">
+      I created <strong>ZYRAXON-Pro</strong>, a full autonomous cloud agent that plans multi-step
+      work and executes it through a library of 871 specialised tools spanning finance, physics,
+      chemistry, engineering, aviation, marine and robotics. I ship complete products rather than
+      prototypes: front end, back end, data layer, CI and deployment, released to real users.
+      My work centres on tool orchestration — designing reliable schemas, MCP servers and agent
+      loops that turn a natural-language request into a finished artifact. I also build
+      cross-platform installers (APK, Windows&nbsp;.exe, macOS&nbsp;.dmg and Linux&nbsp;.deb) through
+      cloud CI, so a single commit becomes a download anyone can open. As <strong>onelpawarai-X</strong>
+      inside ZYRAXON Lab, I lead architecture end to end and keep the whole stack open and auditable.
+    </p>
+  </section>
 
-  <h2>০২ · ক্যাপাবিলিটি</h2>
-  <div class="grid2">
-    <div class="cap"><h3>ওয়েবসাইট ও ওয়েব অ্যাপ</h3><p>সম্পূর্ণ HTML / CSS / JS প্রজেক্ট লিখে ইন্টারঅ্যাক্টিভ প্রিভিউতে ফলাইং, মোবাইল ৩৯০px যাচাই, GitHub Pages‑এ লাইভ ডিপ্লয়।</p></div>
-    <div class="cap"><h3>Android APK</h3><p>aapt2 → javac → d8 → zipalign → apksigner চেইনে সাইন করা, ইনস্টলযোগ্য APK কম্পাইল।</p></div>
-    <div class="cap"><h3>ডেস্কটপ অ্যাপ</h3><p>Windows <b>.exe</b> (NSIS), macOS <b>.dmg</b>, Linux <b>.deb</b> ও <b>.AppImage</b> — GitHub Actions রানারে তৈরি।</p></div>
-    <div class="cap"><h3>ক্লাউড ডিপ্লয়মেন্ট</h3><p>কোড পুশ, Pages সক্রিয়, রিলিজ আপলোড, পাবলিক ডাউনলোড লিংক তৈরি।</p></div>
-    <div class="cap"><h3>কোড অটোমেশন</h3><p>পড়া, রিফ্যাক্টর, ডিবাগ, সিকিউরিটি রিভিউ, পারফরম্যান্স বিশ্লেষণ, টেস্ট জেনারেশন।</p></div>
-    <div class="cap"><h3>লাইভ তথ্য ও হিসাব</h3><p>শেয়ার/ক্রিপ্টো কোট, আবহাওয়া, খবর, সময়, এবং ৮০০+ ইঞ্জিনের গণিত ও বিজ্ঞান ক্যালকুলেটর।</p></div>
-  </div>
+  <!-- 3. SKILLS -->
+  <section class="block">
+    <h2 class="sec-label">Skills</h2>
+    <div class="skills">
+      <div class="skill-card">
+        <h3 class="skill-title">Frontend</h3>
+        <ul class="tags">
+          <li class="tag">HTML</li>
+          <li class="tag">CSS</li>
+          <li class="tag">Tailwind</li>
+          <li class="tag">JavaScript</li>
+          <li class="tag">TypeScript</li>
+          <li class="tag">React</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3 class="skill-title">Backend &amp; Data</h3>
+        <ul class="tags">
+          <li class="tag">Node.js</li>
+          <li class="tag">REST APIs</li>
+          <li class="tag">PostgreSQL</li>
+          <li class="tag">MongoDB</li>
+          <li class="tag">Redis</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3 class="skill-title">Cloud &amp; DevOps</h3>
+        <ul class="tags">
+          <li class="tag">GitHub Actions</li>
+          <li class="tag">GitHub Pages</li>
+          <li class="tag">Docker</li>
+          <li class="tag">CI/CD</li>
+          <li class="tag">Cloudflare</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3 class="skill-title">AI &amp; Agents</h3>
+        <ul class="tags">
+          <li class="tag">LLM agents</li>
+          <li class="tag">Tool orchestration</li>
+          <li class="tag">MCP</li>
+          <li class="tag">Prompt engineering</li>
+          <li class="tag">RAG</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  <h2>০৩ · বিল্ড টার্গেট</h2>
-  <table>
-    <thead><tr><th>টার্গেট</th><th>আউটপুট</th><th>রিলিজ মেথড</th></tr></thead>
-    <tbody>
-      <tr><td>Web</td><td>স্ট্যাটিক সাইট / SPA</td><td>সরাসরি — এই হোস্টে</td></tr>
-      <tr><td>Android</td><td>সাইন করা APK</td><td>সরাসরি (aapt2 + apksigner)</td></tr>
-      <tr><td>Linux</td><td>.deb + .tar.gz</td><td>সরাসরি (Electron শেল)</td></tr>
-      <tr><td>Windows</td><td>.exe ইনস্টলার</td><td>GitHub Actions CI</td></tr>
-      <tr><td>macOS</td><td>.dmg</td><td>GitHub Actions CI</td></tr>
-      <tr><td>Web ZIP</td><td>সোর্স আর্কাইভ</td><td>GitHub Actions CI</td></tr>
-    </tbody>
-  </table>
+  <!-- 4. SELECTED PROJECTS -->
+  <section class="block">
+    <h2 class="sec-label">Selected Projects</h2>
+    <div class="projects">
+      <article class="project">
+        <h3 class="project-name">ZYRAXON-Pro Agent</h3>
+        <p class="project-desc">Full autonomous cloud agent with 871 tools.</p>
+        <ul class="project-tech">
+          <li>TypeScript</li>
+          <li>MCP</li>
+          <li>Tool Orchestration</li>
+        </ul>
+      </article>
 
-  <h2>০৪ · কাজের প্রক্রিয়া</h2>
-  <div class="grid3">
-    <div class="cap"><h3>১ · ডিজাইন</h3><p>প্রজেক্ট ফোল্ডারে পূর্ণ সোর্স ফাইল তৈরি — কোনো স্টাব নয়।</p></div>
-    <div class="cap"><h3>২ · যাচাই</h3><p>ব্রাউজারে খুলে স্ক্রিনশট, কনসোল লগ ও মোবাইল লেআউট পরীক্ষা।</p></div>
-    <div class="cap"><h3>৩ · ডিপ্লয়</h3><p>একই রিপোজিটরিতে ঠিক করে আবার পুশ, তারপর লাইভ URL।</p></div>
-  </div>
+      <article class="project">
+        <h3 class="project-name">ZYRAXON Lab Site</h3>
+        <p class="project-desc">Marketing and product site shipped to GitHub Pages.</p>
+        <ul class="project-tech">
+          <li>HTML</li>
+          <li>Tailwind CSS</li>
+          <li>JavaScript</li>
+        </ul>
+      </article>
 
-  <h2>০৫ · মূল নীতি</h2>
-  <div class="grid2">
-    <div class="cap"><h3>যাচাই ছাড়া দাবি নয়</h3><p>যা তৈরি হয়েছে তা নিজে খুলে না দেখে কখনো “সম্পন্ন” বলা হয় না।</p></div>
-    <div class="cap"><h3>এক কাজ, এক রিপোজিটরি</h3><p>সংশোধন হয় একই রিপোজিটরিতে নতুন পুশ — নতুন রিপো নয়।</p></div>
-  </div>
+      <article class="project">
+        <h3 class="project-name">Cross-Platform Builder</h3>
+        <p class="project-desc">CI pipeline producing APK, Windows .exe, macOS .dmg and Linux .deb.</p>
+        <ul class="project-tech">
+          <li>GitHub Actions</li>
+          <li>Gradle</li>
+          <li>Electron</li>
+          <li>Tauri</li>
+        </ul>
+      </article>
 
-  <div class="foot">
-    <div>ZYRAXON‑Pro · onelpawarai‑X কর্তৃক তৈরি, ZYRAXON Lab</div>
-    <div>সম্পত্বাধিকারী — OMG (Alex Deluar Husen Sayidi)</div>
-  </div>
+      <article class="project">
+        <h3 class="project-name">Tool Library Port</h3>
+        <p class="project-desc">807 specialised computation engines (finance, physics, chemistry, engineering).</p>
+        <ul class="project-tech">
+          <li>Node.js</li>
+          <li>REST</li>
+          <li>JSON Schema</li>
+        </ul>
+      </article>
+    </div>
+  </section>
 
-</div>
+  <!-- 5. EXPERIENCE -->
+  <section class="block">
+    <h2 class="sec-label">Experience</h2>
+    <div class="jobs">
+
+      <article class="job">
+        <div class="job-head">
+          <h3 class="job-role">Founder &amp; Lead Architect</h3>
+          <span class="job-org">ZYRAXON Lab</span>
+          <span class="job-dates">2023 – Present</span>
+        </div>
+        <ul class="bullets">
+          <li>Designed and ship ZYRAXON-Pro, the autonomous agent and its 871-tool orchestration layer spanning finance, physics, chemistry, engineering, aviation and robotics.</li>
+          <li>Lead architecture for the lab's product surface — design system, agent runtime, REST back end and data layer — owning the stack from schema to shipped release.</li>
+          <li>Built the cross-platform CI pipeline that turns a single commit into signed APK, Windows .exe, macOS .dmg and Linux .deb installers.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head">
+          <h3 class="job-role">AI Engineer</h3>
+          <span class="job-org">ZYRAXON Lab</span>
+          <span class="job-dates">2022 – 2023</span>
+        </div>
+        <ul class="bullets">
+          <li>Implemented the retrieval-augmented generation pipeline and prompt/tool routing that grounded agent responses in verified sources.</li>
+          <li>Published MCP servers and tool schemas, raising orchestration reliability across multi-step, multi-tool execution runs.</li>
+          <li>Instrumented evaluation and tracing so agent runs could be replayed, diffed and debugged instead of guessed at.</li>
+        </ul>
+      </article>
+
+      <article class="job">
+        <div class="job-head">
+          <h3 class="job-role">Software Engineer</h3>
+          <span class="job-org">ZYRAXON Lab</span>
+          <span class="job-dates">2020 – 2022</span>
+        </div>
+        <ul class="bullets">
+          <li>Built production web applications end to end — TypeScript and React front ends against Node.js, PostgreSQL and Redis back ends.</li>
+          <li>Introduced automated CI/CD with GitHub Actions, cutting release time from a manual half-day push to a repeatable automated pipeline.</li>
+          <li>Owned database schema design, query tuning and the migration path for production traffic growth.</li>
+        </ul>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 6. EDUCATION -->
+  <section class="block">
+    <h2 class="sec-label">Education</h2>
+    <div class="edu">
+      <h3 class="edu-degree">BSc Computer Science</h3>
+      <span class="edu-dates">2016 – 2020</span>
+    </div>
+  </section>
+
+  <!-- 7. LANGUAGES -->
+  <section class="block">
+    <h2 class="sec-label">Languages</h2>
+    <ul class="langs">
+      <li class="lang"><span class="lang-name">English</span><span class="lang-level">Professional</span></li>
+      <li class="lang"><span class="lang-name">Bahasa Indonesia</span><span class="lang-level">Native</span></li>
+      <li class="lang"><span class="lang-name">Bengali</span><span class="lang-level">Native</span></li>
+    </ul>
+  </section>
+
+  <!-- 8. FOOTER -->
+  <footer class="block foot">
+    <div class="foot-rule" aria-hidden="true"></div>
+    <p class="foot-text">Built by onelpawarai-X · Powered by ZYRAXON-Pro</p>
+  </footer>
+
+</main>
+
 </body>
 </html>
