@@ -5,44 +5,90 @@
 <title>ZYRAXON-Pro — প্রোফাইল ও ক্যাপাবিলিটি শীট</title>
 <style>
   @page { size: A4; margin: 16mm 15mm; }
-  :root{ --ink:#0b1020; --muted:#5b6478; --line:#e3e7f0; --brand:#5b3df5; --brand2:#00c2a8; --bg:#f6f7fb; }
+  :root{
+    --ink:#0b1020; --muted:#5b6478; --line:#e3e7f0;
+    --brand:#5b3df5; --brand2:#00c2a8; --bg:#f6f7fb;
+  }
   *{ box-sizing:border-box; }
-  body{ margin:0; background:var(--bg); color:var(--ink); font-family:"Hind Siliguri","Noto Sans Bengali","Nirmala UI",-apple-system,"Segoe UI",Roboto,sans-serif; line-height:1.7; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
-  .sheet{ width:210mm; min-height:297mm; margin:0 auto; background:#fff; padding:16mm 15mm; box-shadow:0 20px 60px rgba(11,16,32,.12); }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Hind Siliguri","Noto Sans Bengali","Nirmala UI",-apple-system,"Segoe UI",Roboto,sans-serif;
+    line-height:1.7; -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .sheet{
+    width:210mm; min-height:297mm; margin:0 auto; background:#fff;
+    padding:16mm 15mm; box-shadow:0 20px 60px rgba(11,16,32,.12);
+  }
   header{ border-bottom:3px solid var(--ink); padding-bottom:8mm; margin-bottom:8mm; }
   .brandline{ display:flex; justify-content:space-between; align-items:flex-start; gap:8mm; }
-  .logo{ width:22mm; height:22mm; border-radius:6mm; flex:0 0 auto; background:linear-gradient(135deg,var(--brand),var(--brand2)); color:#fff; display:flex; align-items:center; justify-content:center; font-size:20pt; font-weight:800; }
+  .logo{
+    width:22mm; height:22mm; border-radius:6mm; flex:0 0 auto;
+    background:linear-gradient(135deg,var(--brand),var(--brand2));
+    color:#fff; display:flex; align-items:center; justify-content:center;
+    font-size:20pt; font-weight:800; letter-spacing:-.5px;
+  }
   h1{ font-size:26pt; margin:0 0 2mm; letter-spacing:-.6px; line-height:1.2; }
   .sub{ color:var(--muted); font-size:10.5pt; margin:0; }
   .meta{ text-align:right; font-size:8.6pt; color:var(--muted); line-height:1.9; white-space:nowrap; }
   .meta b{ color:var(--ink); }
-  h2{ font-size:11.5pt; text-transform:uppercase; letter-spacing:1.6px; color:var(--brand); margin:9mm 0 4mm; padding-bottom:2mm; border-bottom:1px solid var(--line); }
+
+  h2{
+    font-size:11.5pt; text-transform:uppercase; letter-spacing:1.6px; color:var(--brand);
+    margin:9mm 0 4mm; padding-bottom:2mm; border-bottom:1px solid var(--line);
+  }
   p{ margin:0 0 3mm; font-size:10.2pt; }
-  .identity{ display:grid; grid-template-columns:1fr 1fr; gap:4mm; margin-bottom:2mm; }
-  .idcard{ border:1px solid var(--line); border-left:3px solid var(--brand); border-radius:2mm; padding:4mm 5mm; background:#fcfcff; }
+
+  .identity{
+    display:grid; grid-template-columns:1fr 1fr; gap:4mm; margin-bottom:2mm;
+  }
+  .idcard{
+    border:1px solid var(--line); border-left:3px solid var(--brand);
+    border-radius:2mm; padding:4mm 5mm; background:#fcfcff;
+  }
   .idcard .k{ font-size:8pt; text-transform:uppercase; letter-spacing:1.2px; color:var(--muted); }
   .idcard .v{ font-size:12pt; font-weight:700; margin-top:1mm; }
+
   .grid2{ display:grid; grid-template-columns:1fr 1fr; gap:3mm 5mm; }
   .grid3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:3mm; }
-  .cap{ border:1px solid var(--line); border-radius:2mm; padding:3.5mm 4mm; break-inside:avoid; }
+
+  .cap{
+    border:1px solid var(--line); border-radius:2mm; padding:3.5mm 4mm;
+    break-inside:avoid;
+  }
   .cap h3{ margin:0 0 1mm; font-size:10pt; }
   .cap p{ margin:0; font-size:8.9pt; color:var(--muted); }
+
   table{ width:100%; border-collapse:collapse; font-size:9.4pt; }
   th,td{ text-align:left; padding:2.4mm 3mm; border-bottom:1px solid var(--line); }
   th{ background:#f2f3fa; font-size:8.4pt; text-transform:uppercase; letter-spacing:.8px; }
-  .foot{ margin-top:10mm; padding-top:4mm; border-top:1px solid var(--line); display:flex; justify-content:space-between; font-size:8.4pt; color:var(--muted); }
-  .toolbar{ position:sticky; top:0; z-index:9; background:#0b1020; color:#fff; padding:12px 18px; display:flex; gap:14px; align-items:center; justify-content:center; font-family:"Segoe UI",sans-serif; flex-wrap:wrap; }
-  .toolbar button{ background:linear-gradient(135deg,var(--brand),var(--brand2)); color:#fff; border:0; padding:10px 22px; border-radius:8px; font-size:14px; font-weight:600; cursor:pointer; }
-  .toolbar span{ font-size:12.5px; opacity:.75; }
+  td.num{ font-variant-numeric:tabular-nums; font-weight:700; width:22mm; }
+
+  .foot{
+    margin-top:10mm; padding-top:4mm; border-top:1px solid var(--line);
+    display:flex; justify-content:space-between; font-size:8.4pt; color:var(--muted);
+  }
+  .toolbar{
+    position:sticky; top:0; z-index:9; background:#0b1020; color:#fff;
+    padding:12px 18px; display:flex; gap:12px; align-items:center; justify-content:center;
+    font-family:"Segoe UI",sans-serif;
+  }
+  .toolbar button{
+    background:linear-gradient(135deg,var(--brand),var(--brand2)); color:#fff;
+    border:0; padding:10px 20px; border-radius:8px; font-size:14px; font-weight:600; cursor:pointer;
+  }
+  .toolbar a{ color:#9ee7db; font-size:13px; text-decoration:none; }
   @media print{ .toolbar{ display:none !important; } body{ background:#fff; } .sheet{ box-shadow:none; margin:0; } }
 </style>
 </head>
 <body>
+
 <div class="toolbar">
   <button onclick="window.print()">ডাউনলোড / প্রিন্ট PDF</button>
-  <span>প্রিন্ট উইন্ডোতে Destination = “Save as PDF” নির্বাচন করুন</span>
+  <span style="font-size:13px;opacity:.75">প্রিন্ট উইন্ডোতে Destination = “Save as PDF” নির্বাচন করুন</span>
 </div>
+
 <div class="sheet">
+
   <header>
     <div class="brandline">
       <div style="display:flex;gap:5mm;align-items:center">
@@ -60,6 +106,7 @@
       </div>
     </div>
   </header>
+
   <h2>০১ · পরিচয়</h2>
   <div class="identity">
     <div class="idcard"><div class="k">কে তৈরি করেছে</div><div class="v">onelpawarai‑X</div></div>
@@ -67,6 +114,7 @@
     <div class="idcard" style="grid-column:1/-1"><div class="k">কোথায় তৈরি</div><div class="v">ZYRAXON Lab</div></div>
   </div>
   <p>ZYRAXON‑Pro একটি ক্লাউড‑নেটওয়ার্ক এজেন্ট। এটি সম্পূর্ণ কোড লিখে, ব্রাউজারে খুলে যাচাই করে, তারপর সত্যিকারের লাইভ লিংক অথবা ইনস্টলযোগ্য ফাইল হাতে দেয়। কোনো কিছু তৈরি হয়েছে বলে দাবি করার আগে সেটি খুলে দেখা হয়।</p>
+
   <h2>০২ · ক্যাপাবিলিটি</h2>
   <div class="grid2">
     <div class="cap"><h3>ওয়েবসাইট ও ওয়েব অ্যাপ</h3><p>সম্পূর্ণ HTML / CSS / JS প্রজেক্ট লিখে ইন্টারঅ্যাক্টিভ প্রিভিউতে ফলাইং, মোবাইল ৩৯০px যাচাই, GitHub Pages‑এ লাইভ ডিপ্লয়।</p></div>
@@ -74,8 +122,9 @@
     <div class="cap"><h3>ডেস্কটপ অ্যাপ</h3><p>Windows <b>.exe</b> (NSIS), macOS <b>.dmg</b>, Linux <b>.deb</b> ও <b>.AppImage</b> — GitHub Actions রানারে তৈরি।</p></div>
     <div class="cap"><h3>ক্লাউড ডিপ্লয়মেন্ট</h3><p>কোড পুশ, Pages সক্রিয়, রিলিজ আপলোড, পাবলিক ডাউনলোড লিংক তৈরি।</p></div>
     <div class="cap"><h3>কোড অটোমেশন</h3><p>পড়া, রিফ্যাক্টর, ডিবাগ, সিকিউরিটি রিভিউ, পারফরম্যান্স বিশ্লেষণ, টেস্ট জেনারেশন।</p></div>
-    <div class="cap"><h3>লাইভ তথ্য ও হিসাব</h3><p>শেয়ার/ক্রিপ্টো কোট, আবহাওয়া, খবর, সময়, এবং ৮০০+ ইঞ্জিনের গণিত ও বিজ্ঞান ক্যালকুলেটর।</p></div>
+    <div class="cap"><h3>লাইভ তথ্য ও হিসাব</h2><p>শেয়ার/ক্রিপ্টো কোট, আবহাওয়া, খবর, সময়, এবং ৮০০+ ইঞ্জিনের গণিত ও বিজ্ঞান ক্যালকুলেটর।</p></div>
   </div>
+
   <h2>০৩ · বিল্ড টার্গেট</h2>
   <table>
     <thead><tr><th>টার্গেট</th><th>আউটপুট</th><th>রিলিজ মেথড</th></tr></thead>
@@ -88,21 +137,25 @@
       <tr><td>Web ZIP</td><td>সোর্স আর্কাইভ</td><td>GitHub Actions CI</td></tr>
     </tbody>
   </table>
+
   <h2>০৪ · কাজের প্রক্রিয়া</h2>
   <div class="grid3">
     <div class="cap"><h3>১ · ডিজাইন</h3><p>প্রজেক্ট ফোল্ডারে পূর্ণ সোর্স ফাইল তৈরি — কোনো স্টাব নয়।</p></div>
     <div class="cap"><h3>২ · যাচাই</h3><p>ব্রাউজারে খুলে স্ক্রিনশট, কনসোল লগ ও মোবাইল লেআউট পরীক্ষা।</p></div>
     <div class="cap"><h3>৩ · ডিপ্লয়</h3><p>একই রিপোজিটরিতে ঠিক করে আবার পুশ, তারপর লাইভ URL।</p></div>
   </div>
+
   <h2>০৫ · মূল নীতি</h2>
   <div class="grid2">
     <div class="cap"><h3>যাচাই ছাড়া দাবি নয়</h3><p>যা তৈরি হয়েছে তা নিজে খুলে না দেখে কখনো “সম্পন্ন” বলা হয় না।</p></div>
     <div class="cap"><h3>এক কাজ, এক রিপোজিটরি</h3><p>সংশোধন হয় একই রিপোজিটরিতে নতুন পুশ — নতুন রিপো নয়।</p></div>
   </div>
+
   <div class="foot">
     <div>ZYRAXON‑Pro · onelpawarai‑X কর্তৃক তৈরি, ZYRAXON Lab</div>
     <div>সম্পত্বাধিকারী — OMG (Alex Deluar Husen Sayidi)</div>
   </div>
+
 </div>
 </body>
 </html>
