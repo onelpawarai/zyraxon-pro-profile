@@ -1,0 +1,42 @@
+name: Build PDF
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Chrome
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-beng fonts-noto-core
+          wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb -O /tmp/chrome.deb
+          sudo dpkg -i /tmp/chrome.deb >/dev/null 2>&1 || sudo apt-get install -f -y -qq
+
+      - name: Render PDF
+        run: |
+          google-chrome --headless --no-sandbox --disable-gpu \
+            --print-to-pdf=ZYRAXON-Pro-Profile.pdf \
+            --no-pdf-header-footer --virtual-time-budget=15000 \
+            "file://$PWD/index.html"
+
+      - name: Verify
+        run: |
+          ls -la ZYRAXON-Pro-Profile.pdf
+          test -s ZYRAXON-Pro-Profile.pdf
+
+      - name: Release asset
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ZYRAXON-Pro-Profile.pdf
+          tag_name: profile-v1
+          name: ZYRAXON-Pro Profile Sheet (PDF)
+          body: ZYRAXON-Pro - onelpawarai-X, ZYRAXON Lab. Owner: OMG.
